@@ -1,11 +1,21 @@
-body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
-  }
-  
-  ol, ul {
-    padding-left: 30px;
-  }
-  
+.formContainer {
+  margin: auto;
+  width: 50%;
+  width: 500px;
+  clear: both;
+}
 
+.formContainer input {
+  width: 100%;
+  clear: both;
+}
+
+.header {
+  text-align: center;
+}
+
+.submitButton
+
+.lorumText {
   
+}

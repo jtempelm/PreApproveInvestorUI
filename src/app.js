@@ -6,8 +6,13 @@ export class App extends React.Component {
     render() {
         return (
             <div>
-                <InvestmentForm />
-                <LorumIpsumBlock />
+                <div>
+                    <h2 class="header">Pre Approved Investing!</h2>
+                </div>
+                <div>
+                    <InvestmentForm />
+                    <LorumIpsumBlock />
+                </div>
             </div>
         );
     }

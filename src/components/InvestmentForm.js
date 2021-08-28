@@ -29,29 +29,34 @@ export class InvestmentForm extends React.Component {
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label for="amountInputId">
-                    Investment Amount
-                    <input id="amountInputId" name="amount" type="number" value={this.state.amount} onChange={this.handleChange} />
-                </label>
-                <label for="typeInputId">
-                    Investment Type
-                    <input id="typeInputId" name="type" type="text" value={this.state.type} onChange={this.handleChange} />
-                </label>
-                <label for="netWorthInputId">
-                    Total Net Worth
-                    <input id="netWorthInputId" name="netWorth" type="number" value={this.state.netWorth} onChange={this.handleChange} />
-                </label>
-                <label for="incomeInputId">
-                    User Estimated Yearly Income
-                    <input id="incomeInputId" name="income" type="number" value={this.state.income} onChange={this.handleChange} />
-                </label>
-                <label for="creditScoreInputId">
-                    User Estimated Credit Score
-                    <input id="creditScoreInputId" name="creditScore" type="number" min="300" max="850" value={this.state.creditScore} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <div class="formContainer">
+                <form onSubmit={this.handleSubmit}>
+                    <div>
+                        <label for="amountInputId">Investment Amount</label>
+                        <input id="amountInputId" name="amount" type="number" value={this.state.amount} onChange={this.handleChange} />
+                    </div>
+                    <div>
+                        <label for="typeInputId">Investment Type</label>
+                        <input id="typeInputId" name="type" type="text" value={this.state.type} onChange={this.handleChange} />
+                    </div>
+                    <div>
+                        <label for="netWorthInputId">Total Net Worth</label>
+                        <input id="netWorthInputId" name="netWorth" type="number" value={this.state.netWorth} onChange={this.handleChange} />
+                    </div>
+                    <div>
+                        <label for="incomeInputId">User Estimated Yearly Income</label>
+                        <input id="incomeInputId" name="income" type="number" value={this.state.income} onChange={this.handleChange} />
+                    </div>
+                    <div>
+                        <label for="creditScoreInputId">User Estimated Credit Score</label>
+                        <input id="creditScoreInputId" name="creditScore" type="number" min="300" max="850" value={this.state.creditScore} onChange={this.handleChange} />
+                    </div>
+
+                    <div class = "submitButton">
+                        <input type="submit" value="Submit" />
+                    </div>
+                </form>
+            </div>
         );
     }
 }
