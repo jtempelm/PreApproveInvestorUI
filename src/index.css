@@ -8,14 +8,26 @@
 .formContainer input {
   width: 100%;
   clear: both;
+  margin-bottom: 15px;
 }
 
 .header {
   text-align: center;
 }
 
-.submitButton
+.submitButton {
+  margin-top: 20px;
+  width: 50%;
+  margin:auto;
+}
 
 .lorumText {
-  
+  text-align: center;
+  width: 50%;
+  margin: auto;  
+}
+
+.imageBox {
+  margin-top: 70px;
+  text-align: center;
 }

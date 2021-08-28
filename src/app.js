@@ -1,6 +1,7 @@
 import React from 'react';
 import { InvestmentForm } from './components/InvestmentForm';
 import { LorumIpsumBlock } from './components/LorumIpsumBlock'
+import { Comic } from './components/Comic'
 
 export class App extends React.Component {
     render() {
@@ -12,6 +13,7 @@ export class App extends React.Component {
                 <div>
                     <InvestmentForm />
                     <LorumIpsumBlock />
+                    <Comic />
                 </div>
             </div>
         );

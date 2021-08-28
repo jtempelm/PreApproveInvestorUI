@@ -32,7 +32,9 @@ export class InvestmentForm extends React.Component {
             <div class="formContainer">
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <label for="amountInputId">Investment Amount</label>
+                        <span>
+                            <label for="amountInputId">Investment Amount</label>
+                        </span>
                         <input id="amountInputId" name="amount" type="number" value={this.state.amount} onChange={this.handleChange} />
                     </div>
                     <div>
@@ -52,7 +54,7 @@ export class InvestmentForm extends React.Component {
                         <input id="creditScoreInputId" name="creditScore" type="number" min="300" max="850" value={this.state.creditScore} onChange={this.handleChange} />
                     </div>
 
-                    <div class = "submitButton">
+                    <div class="submitButton">
                         <input type="submit" value="Submit" />
                     </div>
                 </form>

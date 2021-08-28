@@ -4,7 +4,7 @@ npm start
 
 If I had time to kill I could have written some selenium tests in kotlin/java in a utility project to end to end test the app, the extensive use of html ids makes this easier
 
-Nicer error handling leveraging react with some nice red popups and such I could have done. The html validations work just as well and are fast, they are just ugly
+ I could have done some nicer error handling leveraging react with some nice red popups and such. The html validations work just as well and are fast, they are just ugly
 
 I could have deployed this with the CallbackApi backend, such that the .war would serve a minified version of this app to anything that hits it.
 That while practical is not necesarily the best, since it would couple the UI to the backend. If you want to change one, now you have to deploy both.
