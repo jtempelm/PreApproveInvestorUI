@@ -1,5 +1,6 @@
 To run the app, use
 npm install (to pull down node modules in case you didn't already have them)
+
 npm start
 
 If I had time to kill I could have written some selenium tests in kotlin/java in a utility project to end to end test the app, the extensive use of html ids makes this easier
