@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-export class UserForm extends React.Component {
+class UserForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,12 +24,12 @@ export class UserForm extends React.Component {
         });
     }
     handleSubmit(event) {
-        if ((/\d/.test(this.state.password) || /[$-/:-?{-~!"^_`\[\]]/.test(this.state.password)) && /[a-zA-Z]/.test(this.state.password)) {
+        if ((/\d/.test(this.state.password) || /[$-/:-?{-~!"^_`[\]]/.test(this.state.password)) && /[a-zA-Z]/.test(this.state.password)) {
             if (this.state.password !== this.state.passwordReType) {
                 alert('Passwords must match!');
             } else {
                 alert('Form was submitted!');
-                <Link to="/Landing"></Link>
+                this.props.history.push('/Landing')
             }
         } else {
             alert('Password must match the expected format');
@@ -73,3 +74,5 @@ export class UserForm extends React.Component {
         );
     }
 }
+
+export default withRouter(UserForm)

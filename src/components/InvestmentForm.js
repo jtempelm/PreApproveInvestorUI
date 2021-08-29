@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-export class InvestmentForm extends React.Component {
+class InvestmentForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -36,11 +36,11 @@ export class InvestmentForm extends React.Component {
         //         const isApproved = resp.isApproved;
         //         this.setState({ [isApproved]: isApproved })
         //     });
-
+        // let history = useHistory();
         if (isApproved) {
-            <Link to="/NewAccount"></Link>
+            this.props.history.push('/NewAccount')
         } else {
-            <Link to="/Disqualified"></Link>
+            this.props.history.push('/Disqualified')
         }
     }
 
@@ -92,3 +92,5 @@ export class InvestmentForm extends React.Component {
         );
     }
 }
+
+export default withRouter(InvestmentForm)

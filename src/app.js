@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect, useLocation } from "react-router-dom";
-import { UserForm } from './components/UserForm';
-import { Disqualified } from './components/Disqualified';
-import { Landing } from './components/Landing';
+import UserForm from './components/UserForm';
+import Disqualified from './components/Disqualified';
+import Landing from './components/Landing';
 
 export class App extends React.Component {
     render() {
@@ -27,7 +27,6 @@ export class App extends React.Component {
                         <NoMatch />
                     </Route>
                 </Switch>
-
             </BrowserRouter>
         );
     }

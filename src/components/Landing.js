@@ -1,9 +1,10 @@
 import React from 'react';
-import { InvestmentForm } from './InvestmentForm';
+import InvestmentForm from './InvestmentForm';
 import { LorumIpsumBlock } from './LorumIpsumBlock'
 import { Comic } from './Comic'
+import { withRouter } from 'react-router-dom';
 
-export class Landing extends React.Component {
+class Landing extends React.Component {
     render() {
         return (
             <div>
@@ -19,3 +20,5 @@ export class Landing extends React.Component {
         );
     }
 }
+
+export default withRouter(Landing)
