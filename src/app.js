@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect, useLocation } from "react-router-dom";
-import UserForm from './components/UserForm';
+import UserForm from './components/NewAccount';
 import Disqualified from './components/Disqualified';
 import Landing from './components/Landing';
 

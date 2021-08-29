@@ -40,7 +40,7 @@ class InvestmentForm extends React.Component {
         if (isApproved) {
             this.props.history.push('/NewAccount')
         } else {
-            this.props.history.push('/Disqualified')
+            this.props.history.push('/Disqualified/' + message)
         }
     }
 

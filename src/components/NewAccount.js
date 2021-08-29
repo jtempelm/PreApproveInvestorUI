@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
 class UserForm extends React.Component {
@@ -58,7 +57,7 @@ class UserForm extends React.Component {
                         <input id="passwordInputId" name="password" type="password" value={this.state.password} onChange={this.handleChange} minLength="8" required />
                     </div>
                     <div>
-                        <label htmlFor="passwordReTypeInputId">Password</label>
+                        <label htmlFor="passwordReTypeInputId">ReType Password</label>
                         <input id="passwordReTypeInputId" name="passwordReType" type="password" value={this.state.passwordReType} onChange={this.handleChange} minLength="8" required />
                     </div>
                     <div className="submitButton">
