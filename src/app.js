@@ -1,21 +1,46 @@
 import React from 'react';
-import { InvestmentForm } from './components/InvestmentForm';
-import { LorumIpsumBlock } from './components/LorumIpsumBlock'
-import { Comic } from './components/Comic'
+import { BrowserRouter, Route, Switch, Redirect, useLocation } from "react-router-dom";
+import { UserForm } from './components/UserForm';
+import { Disqualified } from './components/Disqualified';
+import { Landing } from './components/Landing';
 
 export class App extends React.Component {
     render() {
         return (
-            <div>
-                <div>
-                    <h2 class="header">Pre Approved Investing!</h2>
-                </div>
-                <div>
-                    <InvestmentForm />
-                    <LorumIpsumBlock />
-                    <Comic />
-                </div>
-            </div>
+            <BrowserRouter basename="/GetApproved">
+                <Switch>
+                    <Route
+                        exact
+                        path="/"
+                        render={() => <Redirect to="/Landing" />}
+                    />
+                    <Route path="/Landing">
+                        <Landing />
+                    </Route>
+                    <Route path="/NewAccount">
+                        <UserForm />
+                    </Route>
+                    <Route path="/Disqualified">
+                        <Disqualified />
+                    </Route>
+                    <Route path="*">
+                        <NoMatch />
+                    </Route>
+                </Switch>
+
+            </BrowserRouter>
         );
     }
+}
+
+function NoMatch() {
+    let location = useLocation();
+
+    return (
+        <div>
+            <h3>
+                No match for <code>{location.pathname}</code>
+            </h3>
+        </div>
+    );
 }

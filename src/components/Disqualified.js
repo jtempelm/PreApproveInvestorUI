@@ -1,25 +1,19 @@
 import React from 'react';
 
 export class Disqualified extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            errorMessage: props.errorMessage
-        };
-    }
-
     render() {
         return (
-
-            <div class="lorumText">
+            <div className="notApproved">
                 <div>
                     <span>
                         Sorry, you are Not Approved™
                     </span>
+                    <br/>
+                    <span>¯\_(ツ)_/¯ </span>
                 </div>
                 <div>
                     <span>
-                        {this.state.errorMessage}
+                        {this.props.errorMessage}
                     </span>
                 </div>
             </div>

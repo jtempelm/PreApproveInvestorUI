@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export class UserForm extends React.Component {
     constructor(props) {
@@ -6,7 +7,7 @@ export class UserForm extends React.Component {
         this.state = {
             username: '',
             password: '',
-            passwordReType : ''
+            passwordReType: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,34 +23,50 @@ export class UserForm extends React.Component {
         });
     }
     handleSubmit(event) {
-        alert('Form was submitted: ');
+        if ((/\d/.test(this.state.password) || /[$-/:-?{-~!"^_`\[\]]/.test(this.state.password)) && /[a-zA-Z]/.test(this.state.password)) {
+            if (this.state.password !== this.state.passwordReType) {
+                alert('Passwords must match!');
+            } else {
+                alert('Form was submitted!');
+                <Link to="/Landing"></Link>
+            }
+        } else {
+            alert('Password must match the expected format');
+        }
         event.preventDefault();
     }
     render() {
         return (
-            <div class="formContainer">
+            <div className="formContainer">
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <span>
-                            Congratulations you are Approved!
-                        </span>
+                        <h2 className="center">Congratulations you are Approved!</h2>
+                        <div className="center">
+                            <span>ᕦʕ •ᴥ•ʔᕤ</span>
+                        </div>
                     </div>
+
                     <div>
                         <span>
-                            <label for="usernameInputId">Username</label>
+                            <label htmlFor="usernameInputId">Username</label>
                         </span>
                         <input id="usernameInputId" name="username" type="email" value={this.state.username} onChange={this.handleChange} required />
                     </div>
                     <div>
-                        <label for="passwordInputId">Password</label>
-                        <input id="passwordInputId" name="password" type="password" value={this.state.password} onChange={this.handleChange} minlength="8" required />
+                        <label htmlFor="passwordInputId">Password</label>
+                        <input id="passwordInputId" name="password" type="password" value={this.state.password} onChange={this.handleChange} minLength="8" required />
                     </div>
                     <div>
-                        <label for="passwordReTypeInputId">Password</label>
-                        <input id="passwordReTypeInputId" name="passwordReType" type="password" value={this.state.passwordReType} onChange={this.handleChange} minlength="8" required />
+                        <label htmlFor="passwordReTypeInputId">Password</label>
+                        <input id="passwordReTypeInputId" name="passwordReType" type="password" value={this.state.passwordReType} onChange={this.handleChange} minLength="8" required />
                     </div>
-                    <div class="submitButton">
+                    <div className="submitButton">
                         <input type="submit" value="Submit" />
+                    </div>
+                    <div>
+                        <div className="center">
+                            <span>Note: Passwords must be more than 8 characters and include at least one number or special character</span>
+                        </div>
                     </div>
                 </form>
             </div>
